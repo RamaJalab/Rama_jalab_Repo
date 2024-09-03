@@ -1,40 +1,89 @@
-/******************************************************************************
- * Copyright (C) 2017 by Alex Fosdick - University of Colorado
- *
- * Redistribution, modification or use of this software in source or binary
- * forms is permitted as long as the files maintain this copyright. Users are 
- * permitted to modify this and use it to learn about the field of embedded
- * software. Alex Fosdick and the University of Colorado are not liable for any
- * misuse of this material. 
- *
- *****************************************************************************/
+#ifndef STATS_H_INCLUDED
+#define STATS_H_INCLUDED
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @brief Find the minimum value in an array.
  *
- * <Add Extended Description Here>
+ * This function iterates through the given array of unsigned char values
+ * and returns the smallest value found.
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
- *
+ * @param arr The array of unsigned char values to be searched.
+ * @param size The number of elements in the array.
+ * @return The minimum value found in the array.
  */
-#ifndef __STATS_H__
-#define __STATS_H__
-
-/* Add Your Declarations and Function Comments here */ 
-
+unsigned char find_minimum(unsigned char arr[], int size);
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief Find the maximum value in an array.
  *
- * <Add Extended Description Here>
+ * This function iterates through the given array of unsigned char values
+ * and returns the largest value found.
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param arr The array of unsigned char values to be searched.
+ * @param size The number of elements in the array.
+ * @return The maximum value found in the array.
+ */
+
+unsigned char find_maximum(unsigned char arr[], int size);
+/**
+ * @brief Sort an array in ascending order.
  *
- * @return <Add Return Informaiton here>
+ * This function sorts the given array of unsigned char values
+ * using the bubble sort algorithm, arranging the elements from
+ * the smallest to the largest.
+ *
+ * @param arr The array of unsigned char values to be sorted.
+ * @param size The number of elements in the array.
  */
 
 
-#endif /* __STATS_H__ */
+void sort_array_ascending(unsigned char arr[], int size);
+/**
+ * @brief Find the median value of an array.
+ *
+ * This function calculates the median of the given array of unsigned char values
+ * after sorting it in ascending order. The median is the middle value of a sorted
+ * array, or the average of the two middle values if the array has an even number of elements.
+ *
+ * @param arr The array of unsigned char values to be analyzed.
+ * @param size The number of elements in the array.
+ * @return The median value of the array.
+ */
+unsigned char find_median(unsigned char arr[], int size);
+/**
+ * @brief Calculate the mean value of an array.
+ *
+ * This function computes the mean (average) of the given array of unsigned char values
+ * by summing all the elements and dividing by the number of elements.
+ *
+ * @param arr The array of unsigned char values to be analyzed.
+ * @param size The number of elements in the array.
+ * @return The mean value of the array as a float.
+ */
+float find_mean(unsigned char arr[], int size);
+/**
+ * @brief Sort an array in descending order.
+ *
+ * This function sorts the given array of unsigned char values
+ * using the bubble sort algorithm, arranging the elements from
+ * the largest to the smallest.
+ *
+ * @param arr The array of unsigned char values to be sorted.
+ * @param size The number of elements in the array.
+ */
+
+void sort_array(unsigned char arr[], int size);
+/**
+ * @brief Print statistical values.
+ *
+ * This function prints the minimum, maximum, median, and mean values
+ * of a dataset to the standard output.
+ *
+ * @param min_value The minimum value from the dataset.
+ * @param max_value The maximum value from the dataset.
+ * @param median_value The median value from the dataset.
+ * @param mean_value The mean value from the dataset.
+ */
+
+void print_statistics(unsigned char min_value,unsigned char max_value,unsigned char median_value,unsigned char mean_value);
+
+
+#endif // STATS_H_INCLUDED
